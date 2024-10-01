@@ -4,8 +4,8 @@ class STLS1(object):
         return STLStream( 
             packet = 
                     STLPktBuilder(
-                        pkt = Ether(dst="ff:ff:ff:ff:ff:ff")/IP(src="16.0.0.1",dst="48.0.0.1")/
-                                UDP(dport=12,sport=1025)/(8958*'x')
+                        pkt = Ether()/IP(src="16.0.0.1",dst="48.0.0.1")/
+                                UDP(dport=12,sport=1025)/(10*'x')
                     ),
              mode = STLTXCont())
 
