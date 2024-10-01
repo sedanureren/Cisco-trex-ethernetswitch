@@ -1,10 +1,14 @@
+from trex_stl_lib.api import *
+import argparse
+
+
 class STLS1(object):
 
     def create_stream (self):
         return STLStream( 
             packet = 
                     STLPktBuilder(
-                        pkt = Ether(dst="ff:ff:ff:ff:ff:ff")/IP(src="16.0.0.1",dst="48.0.0.1")/
+                        pkt = Ether()/IP(src="16.0.0.1",dst="48.0.0.1")/
                                 UDP(dport=12,sport=1025)/(8958*'x')
                     ),
              mode = STLTXCont())
